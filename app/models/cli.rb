@@ -45,7 +45,6 @@ class CLI
             if selection == "Log In"
                 @@username1 = User.login
             elsif selection == "New User"
-                #User.new_user1
                 self.new_user1
             elsif selection == "Delete User"
                 User.delete_user
@@ -61,7 +60,6 @@ class CLI
             if selection == "Log In"
                 @@username2 = User.login
             elsif selection == "New User"
-                #User.new_user2
                 self.new_user2
             elsif selection == "Delete User"
                 User.delete_user
@@ -84,9 +82,6 @@ class CLI
             self.new_user1
         else
             user_hold = User.create(username: username, password: password)
-            #self.find_by(username: username)
-            # puts self
-            # CLI.username1 = self
             puts "\n #{username} has been created."
             system('clear')
             sleep(1)
@@ -105,8 +100,6 @@ class CLI
             self.new_user2
         else
             user_hold = User.create(username: username, password: password)
-            #self.find_by(username: username)
-            # CLI.username2 = self
             puts "\n #{username} has been created."
             system('clear')
             sleep(1)
@@ -140,13 +133,10 @@ class CLI
         jet2 = Jet.create
         jet1.user = @@username1
         jet2.user = @@username2
-        # puts jet1
         HeroesOfTheSky.new(jet1,jet2).show
         jet1.save
         jet2.save
         system("clear")
-        #SOMETHING TO INTRODUCE OUR GAME
-        #puts @pastel.bold(@font.write("Heroes Of The Sky"))
     end
 end 
     

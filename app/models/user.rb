@@ -27,54 +27,11 @@ class User < ActiveRecord::Base
         end
     end
 
-    # def self.new_user1 
-    #     username = @@prompt.ask("Enter your name:")
-    #     password = @@prompt.mask("Enter a password:")
-    #     confirm_password = @@prompt.mask("Confirm your password:")
-        
-    #     if password != confirm_password
-    #         puts "Passwords do not match. Re-enter your information."
-    #         system('clear')
-    #         self.new_user1
-    #     else
-    #         user_hold = self.create(username: username, password: password)
-    #         #self.find_by(username: username)
-    #         put self
-    #         CLI.username1 = self
-    #         puts "\n #{username} has been created."
-    #         system('clear')
-    #         sleep(1)
-    #         self
-    #     end 
-    # end
-
-    # def self.new_user2
-    #     username = @@prompt.ask("Enter your name:")
-    #     password = @@prompt.mask("Enter a password:")
-    #     confirm_password = @@prompt.mask("Confirm your password:")
-        
-    #     if password != confirm_password
-    #         puts "Passwords do not match. Re-enter your information."
-    #         system('clear')
-    #         self.new_user2
-    #     else
-    #         user_hold = self.create(username: username, password: password)
-    #         #self.find_by(username: username)
-    #         CLI.username2 = self
-    #         puts "\n #{username} has been created."
-    #         system('clear')
-    #         sleep(1)
-    #         self
-    #     end 
-    
-    # end
-
     def self.delete_user
         username = @@prompt.ask("Which user do you want to delete?")
         if self.find_by(username: username) 
             user = self.find_by(username: username).password_check
             if user
-                # binding.pry
                 User.destroy(user.id)
                 system('clear')
                 puts "\nYou are destroyed."
@@ -88,13 +45,10 @@ class User < ActiveRecord::Base
         end
     end
 
-
     def self.user_dne
         puts "\nUser does not exist."
         sleep(2)
         CLI.title_screen    
     end 
-
-    
 
 end 

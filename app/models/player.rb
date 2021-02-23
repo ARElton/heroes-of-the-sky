@@ -54,7 +54,6 @@ class Player
         false
        end
       end 
-      #collect stars will return nill if no stars were collected
     end
 
     def shoot_player(bullets)
