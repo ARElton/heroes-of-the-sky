@@ -1,7 +1,7 @@
 # **Instructions:**
 
   1.  Fork and clone this repository.
-  2.  ```cd``` into the cloned folder and open it in your text editor with ```code```
+  2.  ```cd``` into the cloned folder and open it in your text editor with ```code .```
   3.  Open your terminal and run bundle install
   4.  Run  ```ruby bin/run.rb```
   5.  Two player game
